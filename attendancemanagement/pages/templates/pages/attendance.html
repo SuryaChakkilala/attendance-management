@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Attendance{% endblock title %}
+
+{% block content %}
+
+<h2>Attendance</h2>
+<button onclick="history.back()">Go Back</button>
+<hr />
+<form method="POST">
+    {% csrf_token %}
+    <table border="1" style="width:50%">
+        <tr align="center">
+          <th>Registration No</th>
+          <th>Absent</th>
+        </tr>
+        {% for student in students %}
+        <tr align="center">
+            
+                <td>{{student.reg_no}}</td>
+                <td><input type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+        </tr>
+        {% endfor %}
+      </table>
+    <br /><br /><br />
+    <input type="submit" value="SUBMIT" />
+</form>
+{% endblock content %}

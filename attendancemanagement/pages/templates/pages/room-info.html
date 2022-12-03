@@ -1,0 +1,21 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}{{room}}{% endblock title %}
+
+{% block content %}
+
+<h3>{{room}}</h3>
+<h3>Teams</h3>
+<button onclick="history.back()">Go Back</button>
+<hr />
+{% for team in teams %}
+{{team}}<br />
+{% endfor %}
+<hr />
+<br /><br />
+<a href="/room/{{room}}/attendance1"><button>Take Attendance for Review-1</button></a><br />
+<a href="/room/{{room}}/attendance2"><button>Take Attendance for Review-2</button></a><br />
+<a href="/room/{{room}}/attendance3"><button>Take Attendance for Review-3</button></a><br />
+<a href="/room/{{room}}/attendance4"><button>Take Attendance for Review-4</button></a><br />
+
+{% endblock content %}
