@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'attendancemanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hackathondb',
-        'USER': 'root',
-        'PASSWORD': 'SuryaTeja@9192',
-        'HOST':'localhost',
+        'NAME': 'mydb',
+        'USER': 'admin',
+        'PASSWORD': '12345678',
+        'HOST':'mydb1.cfxj0ajszti7.us-east-1.rds.amazonaws.com',
         'PORT':'3306',
     }
 }

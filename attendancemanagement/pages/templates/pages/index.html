@@ -3,10 +3,12 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h2>Rooms</h2>
-<a href="/logout"><button>Logout</button></a>
+<h2 align='center'>Rooms</h2>
+<div align="right"><a href="/logout"><button>Logout</button></a></div>
+<center>
 <hr />
 {% for room in room_list %}
-<a href="/room/{{room}}">{{room}}</a><br />
+<a align='center' href="/room/{{room}}"><button>{{room}}</button></a><br /><br />
 {% endfor %}
+</center>
 {% endblock content %}

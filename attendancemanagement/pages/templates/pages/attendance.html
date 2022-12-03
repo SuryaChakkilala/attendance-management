@@ -11,18 +11,30 @@
     {% csrf_token %}
     <table border="1" style="width:50%">
         <tr align="center">
+          <th>Team No</th>
           <th>Registration No</th>
           <th>Absent</th>
         </tr>
         {% for student in students %}
         <tr align="center">
-            
+                <td>{{student.team.team_no}}</td>
                 <td>{{student.reg_no}}</td>
-                <td><input type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+                {% if no == 1 %}
+                <td><input {% if student.attendance_1 %}checked{% endif %} type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+                {% endif %}
+                {% if no == 2 %}
+                <td><input {% if student.attendance_2 %}checked{% endif %} type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+                {% endif %}
+                {% if no == 3 %}
+                <td><input {% if student.attendance_3 %}checked{% endif %} type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+                {% endif %}
+                {% if no == 4 %}
+                <td><input {% if student.attendance_4 %}checked{% endif %} type="checkbox" name="absentees" value="{{student.reg_no}}" /></td>
+                {% endif %}
         </tr>
         {% endfor %}
       </table>
-    <br /><br /><br />
+    <br /><br />
     <input type="submit" value="SUBMIT" />
 </form>
 {% endblock content %}

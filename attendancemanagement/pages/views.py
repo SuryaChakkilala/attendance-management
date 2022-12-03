@@ -48,12 +48,12 @@ def room_view(request, room_no):
     context = {'teams': teams, 'room': room_no}
     return render(request, 'pages/room-info.html', context)
 
-def attendance1(request, room_no):
+def attendance1(request, room_no, year):
     if not request.user.is_authenticated:
         return redirect('login')
     teams = Team.objects.filter(room_no=room_no)
-    students = Student.objects.filter(team__in=teams).order_by('team')
-    context = {'students': students}
+    students = Student.objects.filter(team__in=teams, year=year).order_by('team')
+    context = {'students': students, 'no': 1}
     if request.method == 'POST':
         absentees = request.POST.getlist('absentees')
         for ab in absentees:
@@ -63,12 +63,12 @@ def attendance1(request, room_no):
         return redirect('home')
     return render(request, 'pages/attendance.html', context)
 
-def attendance2(request, room_no):
+def attendance2(request, room_no, year):
     if not request.user.is_authenticated:
         return redirect('login')
     teams = Team.objects.filter(room_no=room_no)
-    students = Student.objects.filter(team__in=teams).order_by('team')
-    context = {'students': students}
+    students = Student.objects.filter(team__in=teams, year=year).order_by('team')
+    context = {'students': students, 'no': 2}
     if request.method == 'POST':
         absentees = request.POST.getlist('absentees')
         for ab in absentees:
@@ -78,12 +78,12 @@ def attendance2(request, room_no):
         return redirect('home')
     return render(request, 'pages/attendance.html', context)
 
-def attendance3(request, room_no):
+def attendance3(request, room_no, year):
     if not request.user.is_authenticated:
         return redirect('login')
     teams = Team.objects.filter(room_no=room_no)
-    students = Student.objects.filter(team__in=teams).order_by('team')
-    context = {'students': students}
+    students = Student.objects.filter(team__in=teams, year=year).order_by('team')
+    context = {'students': students, 'no': 3}
     if request.method == 'POST':
         absentees = request.POST.getlist('absentees')
         for ab in absentees:
@@ -93,12 +93,12 @@ def attendance3(request, room_no):
         return redirect('home')
     return render(request, 'pages/attendance.html', context)
 
-def attendance4(request, room_no):
+def attendance4(request, room_no, year):
     if not request.user.is_authenticated:
         return redirect('login')
     teams = Team.objects.filter(room_no=room_no)
-    students = Student.objects.filter(team__in=teams).order_by('team')
-    context = {'students': students}
+    students = Student.objects.filter(team__in=teams, year=year).order_by('team')
+    context = {'students': students, 'no': 4}
     if request.method == 'POST':
         absentees = request.POST.getlist('absentees')
         for ab in absentees:
