@@ -18,6 +18,8 @@ for x in result:
 
 cur.execute(query2)
 
+result = cur.fetchall()
+
 c = csv.writer(open('team.csv', 'w'))
 for x in result:
     c.writerow(x)

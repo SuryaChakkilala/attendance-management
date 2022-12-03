@@ -2149,3 +2149,5 @@ Not Found: /favicon.ico
 [03/Dec/2022 20:02:14] "GET /room/C425/2/attendance3 HTTP/1.1" 200 21253
 [03/Dec/2022 20:02:24] "GET /room/C325/2/attendance2 HTTP/1.1" 200 31705
 [03/Dec/2022 20:02:34] "GET /room/C425/2/attendance2 HTTP/1.1" 200 21344
+[03/Dec/2022 20:13:06] "POST /room/C325/2/attendance2 HTTP/1.1" 302 0
+[03/Dec/2022 20:13:07] "GET / HTTP/1.1" 200 2525
